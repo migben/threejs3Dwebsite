@@ -98,18 +98,40 @@ jeff.position.x = 2
 
 // scroll animation
 
+function moveCamera(){
+  const t = document.body.getBoundingClientRect().top
+  moon.rotation.x += 0.05
+  moon.rotation.y += 0.075
+  moon.rotation.z += 0.05
+
+  ben.rotation.y += 0.01
+  ben.rotation.z += 0.01
+
+  camera.position.z = t * -0.01
+  camera.position.x = t * -0.0002
+  camera.position.y = t * -0.0002
+}
+
+document.body.onscroll = moveCamera
+moveCamera()
 
 
+// Animation loop 👇
 
 function animate(){
   requestAnimationFrame( animate )
 
   torus.rotation.x += 0.01
   torus.rotation.y += 0.005
+  torus.rotation.z += 0.01
 
-  controls.update()
+  moon.rotation.x += 0.005
+
+  // controls.update()
 
   renderer.render( scene, camera )
 }
 
 animate()
+
+// We are done for now!! 😎
