@@ -10,7 +10,7 @@ const scene = new THREE.Scene()
 
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000)
 
-const renderer = new THREE.WebGL1Renderer({
+const renderer = new THREE.WebGLRenderer({
   canvas:  document.getElementById('bg')
 })
 
@@ -93,8 +93,8 @@ scene.add(moon)
 moon.position.z = 30
 moon.position.setX(-10)
 
-jeff.position.z = -5
-jeff.position.x = 2
+ben.position.z = -5
+ben.position.x = 2
 
 // scroll animation
 
